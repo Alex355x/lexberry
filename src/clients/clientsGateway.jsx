@@ -1,14 +1,6 @@
-//  import moment from "moment";
-
-// const currentDate = moment().format("DD-MM-YYYY");
-
-
 const baseUrl = `https://lexberry.com.ua/api/v1/clients`;
-// const baseUrl2 = `https://lexberry.com.ua/api/v1/applicants?filter[client:id]=${id}`;
 
-
-
-export const fetchFlightsList = () => {
+export const fetchClientsList = () => {
   return fetch(baseUrl,{
     method: 'GET',
     headers: {
@@ -22,9 +14,6 @@ export const fetchFlightsList = () => {
       throw new Error('failed to get flightsList');
     })
 };
-
-
-
 
 export const fetchZayavnikList = (id) => {
     return fetch(`https://lexberry.com.ua/api/v1/applicants?filter[client:id]=${id}`,{

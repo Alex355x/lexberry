@@ -1,9 +1,8 @@
 import * as clientsGateway from './clientsGateway';
 
 export const CLIENTS_LIST_RECIEVED = 'CLIENTS/CLIENTS_LIST_RECIEVED';
-// export const SHOW_SPINNER = "SHOW_SPINNER";
 
-export const flightsListRecieved = (clientsList) => {
+export const clientsListRecieved = (clientsList) => {
   const action = {
     type: CLIENTS_LIST_RECIEVED,
     payload: {
@@ -13,21 +12,14 @@ export const flightsListRecieved = (clientsList) => {
   return action;
 }
 
-export const getFlightsList = () => {
+export const getClientsList = () => {
   const thunkAction = function (dispatch) {
-    // dispatch(showSpinner())
     clientsGateway
-    .fetchFlightsList()
-    .then(clientsList => dispatch(flightsListRecieved(clientsList)))
+    .fetchClientsList()
+    .then(clientsList => dispatch(clientsListRecieved(clientsList)))
   };
   return thunkAction;
 }
 
-
-// export const showSpinner = () => {
-//   return {
-//       type: SHOW_SPINNER,
-//   }
-// }
 
 
